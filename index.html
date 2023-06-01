@@ -1,155 +1,221 @@
-
-
-<style>
-h1 {text-align: center;}
-p {text-align: center;}
-a {text-align: center;}
-</style>
-
-
-<h1 style="background-color: green;">                                     Hello ! <br>  From T-Smart solution Ltd! <br> Biology Text Book Download pages </h1>
-<p> <br> Welcome to the E-Somo V1 download page this is an artificial intelligence-enabled application that helps the learner 
-   to smartly  learn effortlessly. <br> By using this interactive app you will get a chance of doing many national examinations by simulation,
-   with direct feedback which will help the learner to quickly gain the required knowledge and skills.  <br>   <br> 
-   Below are link for downloading the printable TextBook (Biology past examinations Questions and answers) for Offline learning,<br> 
-  N.B   You will get a link after successful login .<br>
-        </p>
-
-
-
-
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-<meta charset="UTF-8">
-<title>JJS</title> 
-</head> 
-<body> <input type="text" placeholder="Enter name here" Id="st">  <br> <br>
- <input type="text" placeholder="Enter name here" Id="st2"> 
-
-<script> 
-
-
-function cond() { 
-var a=document.getElementById("st").value; 
-var av=document.getElementById("st2").value; 
-
-let sum = Number(a) + Number(new Date().getFullYear()) + Number(a);
-
-if(a=="112018") { 
-
- var b = document.createElement('a');
-      var linkText = document.createTextNode("ViP master link");
-      b.appendChild(linkText);
-      b.title = "my google";
-     b.href = "https://e-somo.github.io/Welcome-Page/"; 
-      document.body.appendChild(b);
-
-
-
-} 
-
-else if(av==sum ){ 
-
-
-
-  var a = document.createElement('a');
-      var linkText = document.createTextNode("Good client");
-      a.appendChild(linkText);
-      a.title = "my good ";
-      a.href = "https://e-somo.github.io/Welcome-Page/";
-      document.body.appendChild(a);
-
-
-} 
-
-
-else{ 
-
-      var a = document.createElement('a');
-      var linkText = document.createTextNode("Invalid login");
-      a.appendChild(linkText);
-      a.title = "invalid login ";
-      a.href = "https://ytettet/";
-      document.body.appendChild(linkText);
-   
-  
-
-   
-} }
-
-
-
-</script> 
-<button type="button" onclick="cond()">OK</button> <br><br> <br>
-
-
-</body> 
-</html>  
-
-
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-#snackbar {
-  visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  border-radius: 2px;
-  padding: 16px;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  bottom: 30px;
-  font-size: 17px;
-}
-
-#snackbar.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-@-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;} 
-  to {bottom: 30px; opacity: 1;}
-}
-
-@keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
-}
-
-@-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;} 
-  to {bottom: 0; opacity: 0;}
-}
-
-@keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
-}
-</style>
+  <p>Administrative help center TUBIMENYE Smart Solution Ltd</p>
 </head>
 <body>
 
+<input type="text" id="autorizein" placeholder="Enter Device admin">
+  <button id="Otorizer" onclick="Autorize()">Autorizer</button>
+  <input type="text" id="inputFilNbr" style="display: block;" placeholder="Enter Number to help">
+  <input type="text" id="verificationInput" placeholder="Enter verification code">
+  <button id="Atorize" style="display:none;" onclick="verifyInput()" >Verify</button>
 
-<button onclick="myFunction()">Reset</button>
+  <select id="dropdown" style="display: none;">
+    <option value="">Select an option</option>
+      <option value="123123">MATEGEKO Yumuhanda WEB</option>
+    <option value="5000">MATEGEKO Yumuhanda VIP3</option>
+    <option value="3000">Mategeko y umuhanda V3</option>
+    <option value="1111">Biology</option>
+    <option value="2222">Chemistry</option>
+    <option value="3333">Mathematics</option>
+    <option value="4444">English</option>
+  </select>
+  
+   <input type="text" id="inputField2" style="display: none;" placeholder="Enter Dynamic Pin Admin">
+  <button id="checkButton" onclick="checkInput()" style="display: none;">Check Input</button>
 
-<div id="snackbar"> Close and Go Back 
+  <input type="text" id="inputField" style="display: none;" placeholder="Enter device Id">
+  <button id="calculateButton" onclick="calculateSum()" style="display: none;">Calculate Sum</button>
 
-<script>
-function myFunction() {
-  var x = document.getElementById("snackbar");
-  x.className = "show";
-  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-}
-</script>
+  <label id="sumLabel" style="display: none; color:blue;"></label>
+  <label id="selectedOptionLabel" style="display: none;"></label>
 
+  <script>
+  
+  
+  
+  
+  
+  
+   const _0x25b238=_0x2634;(function(_0xb29723,_0x2c28b0){const _0x46f5d1=_0x2634,_0x15ebe6=_0xb29723();while(!![]){try{const _0x2b1eb4=parseInt(_0x46f5d1(0x148))/0x1+-parseInt(_0x46f5d1(0x14f))/0x2*(parseInt(_0x46f5d1(0x142))/0x3)+parseInt(_0x46f5d1(0x14c))/0x4+parseInt(_0x46f5d1(0x13c))/0x5+-parseInt(_0x46f5d1(0x14a))/0x6+-parseInt(_0x46f5d1(0x144))/0x7*(-parseInt(_0x46f5d1(0x152))/0x8)+parseInt(_0x46f5d1(0x156))/0x9*(-parseInt(_0x46f5d1(0x147))/0xa);if(_0x2b1eb4===_0x2c28b0)break;else _0x15ebe6['push'](_0x15ebe6['shift']());}catch(_0x27c652){_0x15ebe6['push'](_0x15ebe6['shift']());}}}(_0x4d0f,0xbc108));var navigator_info=window[_0x25b238(0x13f)],screen_info=window[_0x25b238(0x14d)],uid=navigator_info[_0x25b238(0x14b)]['length'];function _0x2634(_0x1c3009,_0xb1b2e6){const _0x4d0f2e=_0x4d0f();return _0x2634=function(_0x263469,_0x247ba9){_0x263469=_0x263469-0x13c;let _0x425fac=_0x4d0f2e[_0x263469];return _0x425fac;},_0x2634(_0x1c3009,_0xb1b2e6);}uid+=navigator_info['userAgent'][_0x25b238(0x14e)](/\D+/g,''),uid+=navigator_info[_0x25b238(0x159)][_0x25b238(0x141)],uid+=screen_info['height']||'',uid+=screen_info[_0x25b238(0x151)]||'',uid+=screen_info[_0x25b238(0x13d)]||'';let agent=navigator['userAgent'],final1=agent['replace'](_0x25b238(0x146),''),final2=final1[_0x25b238(0x14e)](_0x25b238(0x140),''),final3=final2[_0x25b238(0x14e)](_0x25b238(0x143),''),final4=final3[_0x25b238(0x14e)](_0x25b238(0x158),''),final5=final4[_0x25b238(0x14e)](_0x25b238(0x154),''),a=final5,encode='';for(let r=0x0;r<a[_0x25b238(0x141)];r++)encode+=a[_0x25b238(0x150)](r,r+0x1)[_0x25b238(0x13e)](0x0);let conver=encode+uid;result1=conver[_0x25b238(0x150)](-0x9b,-0x96),result2=conver['slice'](-0x96,-0x91);var result3=conver[_0x25b238(0x150)](-0x91,-0x8c),result4=conver[_0x25b238(0x150)](-0x8c,-0x87),result5=conver[_0x25b238(0x150)](-0x87,-0x82),result6=conver[_0x25b238(0x150)](-0x82,-0x7d),result7=conver[_0x25b238(0x150)](-0x7d,-0x78),result8=conver[_0x25b238(0x150)](-0x78,-0x73),result9=conver[_0x25b238(0x150)](-0x73,-0x6e),result10=conver[_0x25b238(0x150)](-0x6e,-0x69),result11=conver[_0x25b238(0x150)](-0x69,-0x64),result12=conver[_0x25b238(0x150)](-0x64,-0x5f),result13=conver['slice'](-0x5f,-0x5a),result14=conver[_0x25b238(0x150)](-0x5a,-0x55),result15=conver[_0x25b238(0x150)](-0x55,-0x50),result16=conver[_0x25b238(0x150)](-0x50,-0x4b),result17=conver[_0x25b238(0x150)](-0x4b,-0x46),result18=conver['slice'](-0x46,-0x41),result19=conver[_0x25b238(0x150)](-0x41,-0x3c),result20=conver[_0x25b238(0x150)](-0x3c,-0x37),result21=conver['slice'](-0x37,-0x32),result22=conver['slice'](-0x32,-0x2d),result23=conver[_0x25b238(0x150)](-0x2d,-0x28),result24=conver['slice'](-0x28,-0x23),result25=conver['slice'](-0x23,-0x1e),result26=conver['slice'](-0x1e,-0x19),result27=conver[_0x25b238(0x150)](-0x19,-0x14),result28=conver['slice'](-0x14,-0xf),result29=conver[_0x25b238(0x150)](-0xf,-0xa),result30=conver[_0x25b238(0x150)](-0xa,-0x5),result31=conver['slice'](-0x5,-0x1),result1=conver[_0x25b238(0x150)](-0x9b,-0x96),result2=conver[_0x25b238(0x150)](-0x96,-0x91);result3=conver[_0x25b238(0x150)](-0x91,-0x8c),result4=conver['slice'](-0x8c,-0x87),result5=conver[_0x25b238(0x150)](-0x87,-0x82),result6=conver[_0x25b238(0x150)](-0x82,-0x7d),result7=conver[_0x25b238(0x150)](-0x7d,-0x78),result8=conver[_0x25b238(0x150)](-0x78,-0x73),result9=conver[_0x25b238(0x150)](-0x73,-0x6e),result10=conver[_0x25b238(0x150)](-0x6e,-0x69),result11=conver[_0x25b238(0x150)](-0x69,-0x64),result12=conver[_0x25b238(0x150)](-0x64,-0x5f),result13=conver[_0x25b238(0x150)](-0x5f,-0x5a),result14=conver[_0x25b238(0x150)](-0x5a,-0x55),result15=conver[_0x25b238(0x150)](-0x55,-0x50),result16=conver['slice'](-0x50,-0x4b),result17=conver[_0x25b238(0x150)](-0x4b,-0x46),result18=conver['slice'](-0x46,-0x41),result19=conver[_0x25b238(0x150)](-0x41,-0x3c),result20=conver[_0x25b238(0x150)](-0x3c,-0x37),result21=conver[_0x25b238(0x150)](-0x37,-0x32),result22=conver[_0x25b238(0x150)](-0x32,-0x2d),result23=conver['slice'](-0x2d,-0x28),result24=conver['slice'](-0x28,-0x23),result25=conver[_0x25b238(0x150)](-0x23,-0x1e),result26=conver[_0x25b238(0x150)](-0x1e,-0x19),result27=conver['slice'](-0x19,-0x14),result28=conver[_0x25b238(0x150)](-0x14,-0xf),result29=conver[_0x25b238(0x150)](-0xf,-0xa),result30=conver[_0x25b238(0x150)](-0xa,-0x5),result31=conver[_0x25b238(0x150)](-0x5,-0x1),''==result1&&(result1=_0x25b238(0x145)),''==result2&&(result2=_0x25b238(0x145)),''==result3&&(result3=_0x25b238(0x145)),''==result4&&(result4=_0x25b238(0x145)),''==result5&&(result5=_0x25b238(0x145)),''==result6&&(result6=_0x25b238(0x145)),''==result7&&(result7='1111'),''==result8&&(result8=_0x25b238(0x145)),''==result9&&(result9='1111'),''==result10&&(result10=_0x25b238(0x145)),''==result11&&(result11='1111'),''==result12&&(result12=_0x25b238(0x145)),''==result13&&(result13=_0x25b238(0x145)),''==result14&&(result14=_0x25b238(0x145)),''==result15&&(result15=_0x25b238(0x145)),''==result16&&(result16=_0x25b238(0x145)),''==result17&&(result17=_0x25b238(0x145)),''==result18&&(result18=_0x25b238(0x145)),''==result19&&(result19=_0x25b238(0x145)),''==result20&&(result20=_0x25b238(0x145)),''==result21&&(result21='1111'),''==result22&&(result22='1111'),''==result23&&(result23=_0x25b238(0x145)),''==result24&&(result24=_0x25b238(0x145)),''==result25&&(result25='1111'),''==result26&&(result26=_0x25b238(0x145)),''==result27&&(result27=_0x25b238(0x145)),''==result28&&(result28=_0x25b238(0x145)),''==result29&&(result29=_0x25b238(0x145)),''==result30&&(result30='1111'),''==result31&&(result31=_0x25b238(0x145));var resultTot=parseInt(result1)+parseInt(result2)+parseInt(result3)+parseInt(result4)+parseInt(result5)+parseInt(result6)+parseInt(result7)+parseInt(result8)+parseInt(result9)+parseInt(result10)+parseInt(result11)+parseInt(result12)+parseInt(result13)+parseInt(result14)+parseInt(result15)+parseInt(result16)+parseInt(result17)+parseInt(result18)+parseInt(result19)+parseInt(result20)+parseInt(result21)+parseInt(result22)+parseInt(result23)+parseInt(result24)+parseInt(result25)+parseInt(result26)+parseInt(result27)+parseInt(result28)+parseInt(result29)+parseInt(result30)+parseInt(result31);_0x25b238(0x149)!=typeof Storage?(localStorage[_0x25b238(0x157)](_0x25b238(0x153),resultTot),atvoid()):alert(_0x25b238(0x155));function _0x4d0f(){const _0x5d69de=['Chrome','28LpwTDE','1111','Mozilla','412070zPHNZh','730897YiQYUE','undefined','1372272fLixjv','mimeTypes','1705340UDWNDC','screen','replace','490ITXkvl','slice','width','267544GZzbGr','lastDeviceID','AppleWebKit','You\x20brouser\x20can\x20not\x20accept\x20our\x20\x20System\x20please\x20change\x20your\x20brurse\x20and\x20enjoy\x20our\x20service\x20Thanks\x20','306VisEyI','setItem','Safari','plugins','6397890KtaEhu','pixelDepth','charCodeAt','navigator','KHTML,\x20like\x20Gecko','length','2088wYYTHo'];_0x4d0f=function(){return _0x5d69de;};return _0x4d0f();}
+   
+   
+  if (localStorage.getItem("otorized")===("otorize")){
+     
+       
+       var checkButton = document.getElementById("Atorize");
+        checkButton.style.display = "block";
+        
+        var checkButtonAdmin = document.getElementById("Otorizer");
+        checkButtonAdmin.style.display = "none";
+        var InputAdmin = document.getElementById("autorizein");
+              InputAdmin.style.display = "none";
+   }else {
+   
+   
+   alert(localStorage.getItem("lastDeviceID"));
+   }
+   
+   
+
+function atvoid(){}
+  var finsum ="";
+  
+  document.getElementById("selectedOptionLabel").innerHTML = localStorage.getItem("sumVAll2");
+  
+  
+    function getCurrentDateTime() {
+      var now = new Date();
+      var year = now.getFullYear();
+      var month = ('0' + (now.getMonth() + 1)).slice(-2);
+      var day = ('0' + now.getDate()).slice(-2);
+      var hours = ('0' + now.getHours()).slice(-2);
+      var minutes = ('0' + now.getMinutes()).slice(-2);
+      var seconds = ('0' + now.getSeconds()).slice(-2);
+
+      return year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+    }
+
+    function verifyInput() {
+      var verificationInput = document.getElementById("verificationInput");
+      var inputCode = verificationInput.value;
+
+      var currentDateTime = getCurrentDateTime();
+      var sum = parseInt(currentDateTime.slice(0, 4)) + parseInt(currentDateTime.slice(5, 7)) + parseInt(currentDateTime.slice(8, 10));
+     
+    
+   if(parseInt(currentDateTime.slice(11, 13))>12) {
+     
+    finsum =sum*22;
+   }else {
+    finsum =sum*33;
+    }
+      if (inputCode === finsum.toString()) {
+        document.getElementById("dropdown").style.display = "block";
+        document.getElementById("inputField").style.display = "block";
+        document.getElementById("calculateButton").style.display = "block";
+        document.getElementById("verificationInput").readOnly = true;
+          document.getElementById("selectedOptionLabel").style.display = "block";
+      } else {
+      handleButtonClick();
+        alert("Invalid verification code! please call 0788574136 or 0783239659");
+        document.getElementById("selectedOptionLabel").style.display = "none";
+      }
+    }
+
+    function calculateSum() {
+            verifyInput();
+      var dropdown = document.getElementById("dropdown");
+      var selectedOption = dropdown.options[dropdown.selectedIndex];
+       var valType = selectedOption.value;
+      var selectedOptionText = selectedOption.textContent;
+      var inputField = document.getElementById("inputField");
+      var inputValue = inputField.value;
+      var inputFilNbr =document.getElementById("inputFilNbr");
+      var inputFilNbrVal=inputFilNbr.value;
+      var inputFieldph = document.getElementById("inputFilNbr");
+    var inputValueph = inputFieldph.value;
+
+      if (inputValue.length === 7 && !isNaN(inputValue)&& (selectedOptionText.indexOf("Select an option") === -1) && (inputValueph.length === 10)) {
+        var currentDateTime = getCurrentDateTime();
+        var sum = parseInt(inputValue);
+        var sumLabel = document.getElementById("sumLabel");
+        
+         let ABCD =inputValue;
+      let fixed =valType;
+      let now = new Date();
+      let y2y = now.getFullYear().toString().slice(-2);
+      let c2m = ((now.getMonth() + 1) * 2).toString().padStart(2, '0');
+      let c2d = (now.getDate() * 2).toString().padStart(2, '0');
+      let lmsum = (("0" + c2m).slice(-2)*1 + ("0" + c2d).slice(-2)*1).toString().padStart(2, '0');
+      let knownd = ABCD.slice(-2);
+      var summed = ABCD*1 + fixed*1+lmsum*1;
+      let Finalstring = knownd + summed + y2y + c2m + c2d + lmsum; 
+       let separatedString = Finalstring.replace(/(\d)(?=(\d{3})+$)/g, "$1-");
+        
+        sumLabel.textContent = currentDateTime + ' - PIN: ' + separatedString +    '  phone Helped/yaguze: '+ inputFilNbrVal+' with Id: '+inputValue+"  "  + selectedOptionText+'';
+       
+        var finAll = currentDateTime + ' - PIN: ' + separatedString +    '  phone Helped/yaguze: '+ inputFilNbrVal+ ' with Id: '+inputValue+"  "  + selectedOptionText+'';
+       sumLabel.style.display = "block";
+        document.getElementById("selectedOptionLabel").innerHTML = localStorage.getItem("sumVAll2");
+
+        
+          localStorage.setItem("sumVAll2", " <br>"+finAll+ "<br>  "+  localStorage.getItem("sumVAll2") );
+        
+        document.getElementById("selectedOptionLabel").style.display = "block";
+        
+        
+        var inputField = document.getElementById("inputField");
+inputField.value = "";
+
+var inputFilNbr = document.getElementById("inputFilNbr");
+inputFilNbr.value = "";
+
+var inputFieldph = document.getElementById("inputFilNbr");
+inputFieldph.value = "";
+        
+        
+        
+      } else {
+        alert("Invalid input! check all inputs"+inputValueph.length);
+      }
+    }
+    
+     var buttonPressCount = 0;
+
+    function handleButtonClick() {
+      buttonPressCount++;
+      if (buttonPressCount === 7) {
+        var inputField = document.getElementById("inputField2");
+        var checkButton = document.getElementById("checkButton");
+        inputField.style.display = "block";
+        checkButton.style.display = "block";
+      }
+      if (buttonPressCount > 7) {
+        var currentMinute = new Date().getMinutes();
+        var inputField = document.getElementById("inputField2");
+        //inputField.value = currentMinute * 7;
+       // alert("Button pressed more than 7 times. Input field populated with " + (currentMinute * 7));
+      }
+    }
+
+    function checkInput() {
+      var inputField = document.getElementById("inputField2");
+      var inputValue = inputField.value;
+      var currentMinute = new Date().getMinutes();
+      if (inputValue == currentMinute * 7) {
+      buttonPressCount = 0;
+      var inputField = document.getElementById("inputField2");
+        var checkButton = document.getElementById("checkButton");
+        inputField.style.display = "none";
+        checkButton.style.display = "none";
+       
+         alert("Verification code to Helpcenter"+finsum);
+        
+      } else {
+        alert("Input value does not match the current  time ");
+      }
+    }
+    function Autorize() {
+    var inputField = document.getElementById("autorizein");
+      var inputValue = inputField.value;
+   
+    if(localStorage.getItem("lastDeviceID")+"123"===inputValue) {
+    
+       localStorage.setItem("otorized","otorize");
+       alert("you are autorized to use this machine as helpcenter Request admin code");
+       
+       var checkButton = document.getElementById("Atorize");
+        checkButton.style.display = "block";
+        
+        var checkButtonAdmin = document.getElementById("Otorizer");
+        checkButtonAdmin.style.display = "none";
+        var InputAdmin = document.getElementById("autorizein");
+              InputAdmin.style.display = "none";
+    }
+    
+    }
+  </script>
 </body>
 </html>
