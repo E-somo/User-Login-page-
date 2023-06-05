@@ -10,7 +10,7 @@
   <input type="text" id="inputFilNbr" style="display: block;" placeholder="Enter Number to help">
   <input type="text" id="verificationInput" placeholder="Enter verification code">
   <button id="Atorize" style="display:none;" onclick="verifyInput()" >Verify</button>
-
+ <button id="AtoMomo" style="color:blue;" onclick="ActivateMomo()" >Momo Pay OTP </button>
   <select id="dropdown" style="display: none;">
     <option value="">Select an option</option>
       <option value="123123">MATEGEKO Yumuhanda WEB</option>
@@ -216,6 +216,22 @@ inputFieldph.value = "";
     }
     
     }
+    
+    
+    function ActivateMomo() {
+    
+      var input1 = document.getElementById('inputFilNbr').value;
+  var sum1 = new Date().getDate() + new Date().getMonth() + 1; // Add 1 to get the current month
+
+  if (input1.length === 10) {
+    var result = (parseInt(input1) * 1 + sum1 - 700000000) * 4;
+    alert('The result is: ' + result);
+  } else {
+    alert('Please enter a 10-digit number');
+  }
+}
+    
+    
   </script>
 </body>
 </html>
