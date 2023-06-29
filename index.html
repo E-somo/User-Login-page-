@@ -30,13 +30,28 @@
 
   <label id="sumLabel" style="display: none; color:blue;"></label>
   <label id="selectedOptionLabel" style="display: none;"></label>
+ 
+ <h1>IndexedDB Example</h1>
+
+    <input type="text" id="nameInput" placeholder="Enter Name">
+    <button onclick="storeData()">Store Data</button>
+    <button onclick="getData()">Get Data</button>
+    <button onclick="exportData()">Export Data</button>
+    
+    <br>
+    <input type="text" id="searchInput" placeholder="Search Name">
+    <button onclick="searchData()">Search</button>
+
+    <br>
+    <input type="text" id="updateIdInput" placeholder="Enter ID">
+    <input type="text" id="updateNameInput" placeholder="Enter New Name">
+    <button onclick="updateData()">Update</button>
+
+  
 
   <script>
   
-  
-  
-  
-  
+ 
   
    const _0x25b238=_0x2634;(function(_0xb29723,_0x2c28b0){const _0x46f5d1=_0x2634,_0x15ebe6=_0xb29723();while(!![]){try{const _0x2b1eb4=parseInt(_0x46f5d1(0x148))/0x1+-parseInt(_0x46f5d1(0x14f))/0x2*(parseInt(_0x46f5d1(0x142))/0x3)+parseInt(_0x46f5d1(0x14c))/0x4+parseInt(_0x46f5d1(0x13c))/0x5+-parseInt(_0x46f5d1(0x14a))/0x6+-parseInt(_0x46f5d1(0x144))/0x7*(-parseInt(_0x46f5d1(0x152))/0x8)+parseInt(_0x46f5d1(0x156))/0x9*(-parseInt(_0x46f5d1(0x147))/0xa);if(_0x2b1eb4===_0x2c28b0)break;else _0x15ebe6['push'](_0x15ebe6['shift']());}catch(_0x27c652){_0x15ebe6['push'](_0x15ebe6['shift']());}}}(_0x4d0f,0xbc108));var navigator_info=window[_0x25b238(0x13f)],screen_info=window[_0x25b238(0x14d)],uid=navigator_info[_0x25b238(0x14b)]['length'];function _0x2634(_0x1c3009,_0xb1b2e6){const _0x4d0f2e=_0x4d0f();return _0x2634=function(_0x263469,_0x247ba9){_0x263469=_0x263469-0x13c;let _0x425fac=_0x4d0f2e[_0x263469];return _0x425fac;},_0x2634(_0x1c3009,_0xb1b2e6);}uid+=navigator_info['userAgent'][_0x25b238(0x14e)](/\D+/g,''),uid+=navigator_info[_0x25b238(0x159)][_0x25b238(0x141)],uid+=screen_info['height']||'',uid+=screen_info[_0x25b238(0x151)]||'',uid+=screen_info[_0x25b238(0x13d)]||'';let agent=navigator['userAgent'],final1=agent['replace'](_0x25b238(0x146),''),final2=final1[_0x25b238(0x14e)](_0x25b238(0x140),''),final3=final2[_0x25b238(0x14e)](_0x25b238(0x143),''),final4=final3[_0x25b238(0x14e)](_0x25b238(0x158),''),final5=final4[_0x25b238(0x14e)](_0x25b238(0x154),''),a=final5,encode='';for(let r=0x0;r<a[_0x25b238(0x141)];r++)encode+=a[_0x25b238(0x150)](r,r+0x1)[_0x25b238(0x13e)](0x0);let conver=encode+uid;result1=conver[_0x25b238(0x150)](-0x9b,-0x96),result2=conver['slice'](-0x96,-0x91);var result3=conver[_0x25b238(0x150)](-0x91,-0x8c),result4=conver[_0x25b238(0x150)](-0x8c,-0x87),result5=conver[_0x25b238(0x150)](-0x87,-0x82),result6=conver[_0x25b238(0x150)](-0x82,-0x7d),result7=conver[_0x25b238(0x150)](-0x7d,-0x78),result8=conver[_0x25b238(0x150)](-0x78,-0x73),result9=conver[_0x25b238(0x150)](-0x73,-0x6e),result10=conver[_0x25b238(0x150)](-0x6e,-0x69),result11=conver[_0x25b238(0x150)](-0x69,-0x64),result12=conver[_0x25b238(0x150)](-0x64,-0x5f),result13=conver['slice'](-0x5f,-0x5a),result14=conver[_0x25b238(0x150)](-0x5a,-0x55),result15=conver[_0x25b238(0x150)](-0x55,-0x50),result16=conver[_0x25b238(0x150)](-0x50,-0x4b),result17=conver[_0x25b238(0x150)](-0x4b,-0x46),result18=conver['slice'](-0x46,-0x41),result19=conver[_0x25b238(0x150)](-0x41,-0x3c),result20=conver[_0x25b238(0x150)](-0x3c,-0x37),result21=conver['slice'](-0x37,-0x32),result22=conver['slice'](-0x32,-0x2d),result23=conver[_0x25b238(0x150)](-0x2d,-0x28),result24=conver['slice'](-0x28,-0x23),result25=conver['slice'](-0x23,-0x1e),result26=conver['slice'](-0x1e,-0x19),result27=conver[_0x25b238(0x150)](-0x19,-0x14),result28=conver['slice'](-0x14,-0xf),result29=conver[_0x25b238(0x150)](-0xf,-0xa),result30=conver[_0x25b238(0x150)](-0xa,-0x5),result31=conver['slice'](-0x5,-0x1),result1=conver[_0x25b238(0x150)](-0x9b,-0x96),result2=conver[_0x25b238(0x150)](-0x96,-0x91);result3=conver[_0x25b238(0x150)](-0x91,-0x8c),result4=conver['slice'](-0x8c,-0x87),result5=conver[_0x25b238(0x150)](-0x87,-0x82),result6=conver[_0x25b238(0x150)](-0x82,-0x7d),result7=conver[_0x25b238(0x150)](-0x7d,-0x78),result8=conver[_0x25b238(0x150)](-0x78,-0x73),result9=conver[_0x25b238(0x150)](-0x73,-0x6e),result10=conver[_0x25b238(0x150)](-0x6e,-0x69),result11=conver[_0x25b238(0x150)](-0x69,-0x64),result12=conver[_0x25b238(0x150)](-0x64,-0x5f),result13=conver[_0x25b238(0x150)](-0x5f,-0x5a),result14=conver[_0x25b238(0x150)](-0x5a,-0x55),result15=conver[_0x25b238(0x150)](-0x55,-0x50),result16=conver['slice'](-0x50,-0x4b),result17=conver[_0x25b238(0x150)](-0x4b,-0x46),result18=conver['slice'](-0x46,-0x41),result19=conver[_0x25b238(0x150)](-0x41,-0x3c),result20=conver[_0x25b238(0x150)](-0x3c,-0x37),result21=conver[_0x25b238(0x150)](-0x37,-0x32),result22=conver[_0x25b238(0x150)](-0x32,-0x2d),result23=conver['slice'](-0x2d,-0x28),result24=conver['slice'](-0x28,-0x23),result25=conver[_0x25b238(0x150)](-0x23,-0x1e),result26=conver[_0x25b238(0x150)](-0x1e,-0x19),result27=conver['slice'](-0x19,-0x14),result28=conver[_0x25b238(0x150)](-0x14,-0xf),result29=conver[_0x25b238(0x150)](-0xf,-0xa),result30=conver[_0x25b238(0x150)](-0xa,-0x5),result31=conver[_0x25b238(0x150)](-0x5,-0x1),''==result1&&(result1=_0x25b238(0x145)),''==result2&&(result2=_0x25b238(0x145)),''==result3&&(result3=_0x25b238(0x145)),''==result4&&(result4=_0x25b238(0x145)),''==result5&&(result5=_0x25b238(0x145)),''==result6&&(result6=_0x25b238(0x145)),''==result7&&(result7='1111'),''==result8&&(result8=_0x25b238(0x145)),''==result9&&(result9='1111'),''==result10&&(result10=_0x25b238(0x145)),''==result11&&(result11='1111'),''==result12&&(result12=_0x25b238(0x145)),''==result13&&(result13=_0x25b238(0x145)),''==result14&&(result14=_0x25b238(0x145)),''==result15&&(result15=_0x25b238(0x145)),''==result16&&(result16=_0x25b238(0x145)),''==result17&&(result17=_0x25b238(0x145)),''==result18&&(result18=_0x25b238(0x145)),''==result19&&(result19=_0x25b238(0x145)),''==result20&&(result20=_0x25b238(0x145)),''==result21&&(result21='1111'),''==result22&&(result22='1111'),''==result23&&(result23=_0x25b238(0x145)),''==result24&&(result24=_0x25b238(0x145)),''==result25&&(result25='1111'),''==result26&&(result26=_0x25b238(0x145)),''==result27&&(result27=_0x25b238(0x145)),''==result28&&(result28=_0x25b238(0x145)),''==result29&&(result29=_0x25b238(0x145)),''==result30&&(result30='1111'),''==result31&&(result31=_0x25b238(0x145));var resultTot=parseInt(result1)+parseInt(result2)+parseInt(result3)+parseInt(result4)+parseInt(result5)+parseInt(result6)+parseInt(result7)+parseInt(result8)+parseInt(result9)+parseInt(result10)+parseInt(result11)+parseInt(result12)+parseInt(result13)+parseInt(result14)+parseInt(result15)+parseInt(result16)+parseInt(result17)+parseInt(result18)+parseInt(result19)+parseInt(result20)+parseInt(result21)+parseInt(result22)+parseInt(result23)+parseInt(result24)+parseInt(result25)+parseInt(result26)+parseInt(result27)+parseInt(result28)+parseInt(result29)+parseInt(result30)+parseInt(result31);_0x25b238(0x149)!=typeof Storage?(localStorage[_0x25b238(0x157)](_0x25b238(0x153),resultTot),atvoid()):alert(_0x25b238(0x155));function _0x4d0f(){const _0x5d69de=['Chrome','28LpwTDE','1111','Mozilla','412070zPHNZh','730897YiQYUE','undefined','1372272fLixjv','mimeTypes','1705340UDWNDC','screen','replace','490ITXkvl','slice','width','267544GZzbGr','lastDeviceID','AppleWebKit','You\x20brouser\x20can\x20not\x20accept\x20our\x20\x20System\x20please\x20change\x20your\x20brurse\x20and\x20enjoy\x20our\x20service\x20Thanks\x20','306VisEyI','setItem','Safari','plugins','6397890KtaEhu','pixelDepth','charCodeAt','navigator','KHTML,\x20like\x20Gecko','length','2088wYYTHo'];_0x4d0f=function(){return _0x5d69de;};return _0x4d0f();}
    
@@ -230,6 +245,152 @@ inputFieldph.value = "";
     alert('Please enter a 10-digit phone number number');
   }
 }
+
+
+
+ var request = indexedDB.open('myDatabase', 1);
+        var db;
+
+        request.onerror = function(event) {
+            console.log('Database error: ' + event.target.errorCode);
+        };
+
+        request.onsuccess = function(event) {
+            db = event.target.result;
+            console.log('Database opened successfully');
+        };
+
+        request.onupgradeneeded = function(event) {
+            db = event.target.result;
+            var objectStore = db.createObjectStore('myData', { keyPath: 'id', autoIncrement: true });
+            objectStore.createIndex('name', 'name', { unique: false });
+            console.log('Database upgrade complete');
+        };
+
+        function storeData() {
+            var name = document.getElementById('nameInput').value;
+            var data = { name: name, age: 30 };
+
+            var transaction = db.transaction(['myData'], 'readwrite');
+            var objectStore = transaction.objectStore('myData');
+            var request = objectStore.put(data);
+
+            request.onerror = function(event) {
+                console.log('Error storing data: ' + event.target.error);
+            };
+
+            request.onsuccess = function(event) {
+                console.log('Data stored successfully');
+            };
+        }
+
+        function getData() {
+            var selectedKey = prompt('Enter the key (ID) of the data to retrieve:');
+            if (selectedKey !== null && selectedKey !== '') {
+                var key = Number(selectedKey);
+
+                var transaction = db.transaction(['myData'], 'readonly');
+                var objectStore = transaction.objectStore('myData');
+                var request = objectStore.get(key);
+
+                request.onerror = function(event) {
+                    console.log('Error retrieving data: ' + event.target.error);
+                };
+
+                request.onsuccess = function(event) {
+                    var data = event.target.result;
+                    if (data) {
+                        var message = 'Retrieved data:\nName: ' + data.name + ', Age: ' + data.age;
+                        alert(message);
+                    } else {
+                        alert('No data found with the provided key');
+                    }
+                };
+            }
+        }
+
+        function exportData() {
+            var transaction = db.transaction(['myData'], 'readonly');
+            var objectStore = transaction.objectStore('myData');
+            var request = objectStore.getAll();
+
+            request.onerror = function(event) {
+                console.log('Error retrieving data: ' + event.target.error);
+            };
+
+            request.onsuccess = function(event) {
+                var data = event.target.result;
+                if (data.length > 0) {
+                    var workbook = XLSX.utils.book_new();
+                    var worksheet = XLSX.utils.json_to_sheet(data);
+                    XLSX.utils.book_append_sheet(workbook, worksheet, 'Data');
+                    XLSX.writeFile(workbook, 'data.xlsx');
+                    console.log('Data exported successfully');
+                } else {
+                    console.log('No data found in the database');
+                }
+            };
+        }
+        
+        function searchData() {
+            var searchTerm = document.getElementById('searchInput').value;
+            
+            var transaction = db.transaction(['myData'], 'readonly');
+            var objectStore = transaction.objectStore('myData');
+            var index = objectStore.index('name');
+            var request = index.getAll(IDBKeyRange.bound(searchTerm, searchTerm + '\uffff'));
+            
+            request.onerror = function(event) {
+                console.log('Error searching data: ' + event.target.error);
+            };
+            
+            request.onsuccess = function(event) {
+                var data = event.target.result;
+                if (data.length > 0) {
+                    var message = 'Search results:\n';
+                    for (var i = 0; i < data.length; i++) {
+                        message += 'Name: ' + data[i].name + ', Age: ' + data[i].age + '\n';
+                    }
+                    alert(message);
+                } else {
+                    alert('No matching data found');
+                }
+            };
+        }
+        
+        function updateData() {
+            var id = Number(document.getElementById('updateIdInput').value);
+            var name = document.getElementById('updateNameInput').value;
+            
+            var transaction = db.transaction(['myData'], 'readwrite');
+            var objectStore = transaction.objectStore('myData');
+            var request = objectStore.get(id);
+            
+            request.onerror = function(event) {
+                console.log('Error retrieving data: ' + event.target.error);
+            };
+            
+            request.onsuccess = function(event) {
+                var data = event.target.result;
+                if (data) {
+                    data.name = name;
+                    var updateRequest = objectStore.put(data);
+                    
+                    updateRequest.onerror = function(event) {
+                        console.log('Error updating data: ' + event.target.error);
+                    };
+                    
+                    updateRequest.onsuccess = function(event) {
+                        console.log('Data updated successfully');
+                    };
+                } else {
+                    alert('No data found with the provided ID');
+                }
+            };
+        }
+    </script>
+
+
     
     
   </script>
