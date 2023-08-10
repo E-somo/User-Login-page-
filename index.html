@@ -1,9 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <p>Administrative help center TUBIMENYE Smart Solution Ltd</p>
+  <p>Administrative help center TUBIMENYE Smart Solution Ltd</p> 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<body>
+<body> 
+
+  
+  <h1>Calculator</h1>
+    
+    <label for="inputABCD">Input ABCD: App Id </label>
+    <input type="text" id="inputABCD">
+    <br>
+    
+    <label for="inputFixed">Select Fixed Value (cost):</label>
+    <select id="inputFixed">
+        <option value="2800">Mat Web</option>
+        <option value="3000">Mat V3</option>
+        <option value="5500">Mat VIP3</option>
+    </select>
+    <br>
+    
+    <label for="inputMonth">Select Month:</label>
+    <select id="inputMonth">
+        <option value="01">January 01</option>
+        <option value="02">February02</option> 
+         <option value="03">March 03</option>
+        <option value="04">April 04</option>
+        <option value="05">May 05 </option>
+        <option value="06">June 06 </option>
+        <option value="07">July 07 </option>
+        <option value="08">August 08 </option>
+        <option value="09">September 09 </option>
+        <option value="10">October 10 </option>
+        <option value="11">November 11</option>
+        <option value="12">December12 </option>
+        <!-- ... Add other months here ... -->
+    </select>
+    
+    <label for="inputDay">Select Day:</label>
+    <select id="inputDay">
+        <script>
+            for (let day = 1; day <= 31; day++) {
+                document.write(`<option value="${day.toString().padStart(2, '0')}">${day}</option>`);
+            }
+        </script>
+    </select>
+    <br>
+    
+    <label for="inputComment">Comment:</label>
+    <input type="text" id="inputComment">
+    <br>
+    
+    <button id="calculateButton2">Calculate</button>
+    <button id="displayResultsButton">Display Saved Results</button>
+    
+    <p id="result"></p>
+
+
+
+    <label for="input1x">Enter a number:</label>
+    <input type="number" id="input1x">
+
+    <!-- Result will be displayed here -->
+    <p id="result"></p>
 
 <input type="text" id="autorizein" placeholder="Enter Device admin">
   <button id="Otorizer" onclick="Autorize()">Autorizer</button>
@@ -13,7 +73,7 @@
  <button id="AtoMomo" style="color:blue;" onclick="ActivateMomo()" >Momo Pay OTP </button>
   <select id="dropdown" style="display: none;">
     <option value="">Select an option</option>
-      <option value="123123">MATEGEKO Yumuhanda WEB</option>
+      <option value="2800">MATEGEKO Yumuhanda WEB</option>
     <option value="5500">MATEGEKO Yumuhanda VIP3</option>
     <option value="3000">Mategeko y umuhanda V3</option>
     <option value="1111">Biology</option>
@@ -50,7 +110,7 @@
   
 
   <script>
-  
+  document.getElementById("calculateButton2").style.display = "none";
  
   
    const _0x25b238=_0x2634;(function(_0xb29723,_0x2c28b0){const _0x46f5d1=_0x2634,_0x15ebe6=_0xb29723();while(!![]){try{const _0x2b1eb4=parseInt(_0x46f5d1(0x148))/0x1+-parseInt(_0x46f5d1(0x14f))/0x2*(parseInt(_0x46f5d1(0x142))/0x3)+parseInt(_0x46f5d1(0x14c))/0x4+parseInt(_0x46f5d1(0x13c))/0x5+-parseInt(_0x46f5d1(0x14a))/0x6+-parseInt(_0x46f5d1(0x144))/0x7*(-parseInt(_0x46f5d1(0x152))/0x8)+parseInt(_0x46f5d1(0x156))/0x9*(-parseInt(_0x46f5d1(0x147))/0xa);if(_0x2b1eb4===_0x2c28b0)break;else _0x15ebe6['push'](_0x15ebe6['shift']());}catch(_0x27c652){_0x15ebe6['push'](_0x15ebe6['shift']());}}}(_0x4d0f,0xbc108));var navigator_info=window[_0x25b238(0x13f)],screen_info=window[_0x25b238(0x14d)],uid=navigator_info[_0x25b238(0x14b)]['length'];function _0x2634(_0x1c3009,_0xb1b2e6){const _0x4d0f2e=_0x4d0f();return _0x2634=function(_0x263469,_0x247ba9){_0x263469=_0x263469-0x13c;let _0x425fac=_0x4d0f2e[_0x263469];return _0x425fac;},_0x2634(_0x1c3009,_0xb1b2e6);}uid+=navigator_info['userAgent'][_0x25b238(0x14e)](/\D+/g,''),uid+=navigator_info[_0x25b238(0x159)][_0x25b238(0x141)],uid+=screen_info['height']||'',uid+=screen_info[_0x25b238(0x151)]||'',uid+=screen_info[_0x25b238(0x13d)]||'';let agent=navigator['userAgent'],final1=agent['replace'](_0x25b238(0x146),''),final2=final1[_0x25b238(0x14e)](_0x25b238(0x140),''),final3=final2[_0x25b238(0x14e)](_0x25b238(0x143),''),final4=final3[_0x25b238(0x14e)](_0x25b238(0x158),''),final5=final4[_0x25b238(0x14e)](_0x25b238(0x154),''),a=final5,encode='';for(let r=0x0;r<a[_0x25b238(0x141)];r++)encode+=a[_0x25b238(0x150)](r,r+0x1)[_0x25b238(0x13e)](0x0);let conver=encode+uid;result1=conver[_0x25b238(0x150)](-0x9b,-0x96),result2=conver['slice'](-0x96,-0x91);var result3=conver[_0x25b238(0x150)](-0x91,-0x8c),result4=conver[_0x25b238(0x150)](-0x8c,-0x87),result5=conver[_0x25b238(0x150)](-0x87,-0x82),result6=conver[_0x25b238(0x150)](-0x82,-0x7d),result7=conver[_0x25b238(0x150)](-0x7d,-0x78),result8=conver[_0x25b238(0x150)](-0x78,-0x73),result9=conver[_0x25b238(0x150)](-0x73,-0x6e),result10=conver[_0x25b238(0x150)](-0x6e,-0x69),result11=conver[_0x25b238(0x150)](-0x69,-0x64),result12=conver[_0x25b238(0x150)](-0x64,-0x5f),result13=conver['slice'](-0x5f,-0x5a),result14=conver[_0x25b238(0x150)](-0x5a,-0x55),result15=conver[_0x25b238(0x150)](-0x55,-0x50),result16=conver[_0x25b238(0x150)](-0x50,-0x4b),result17=conver[_0x25b238(0x150)](-0x4b,-0x46),result18=conver['slice'](-0x46,-0x41),result19=conver[_0x25b238(0x150)](-0x41,-0x3c),result20=conver[_0x25b238(0x150)](-0x3c,-0x37),result21=conver['slice'](-0x37,-0x32),result22=conver['slice'](-0x32,-0x2d),result23=conver[_0x25b238(0x150)](-0x2d,-0x28),result24=conver['slice'](-0x28,-0x23),result25=conver['slice'](-0x23,-0x1e),result26=conver['slice'](-0x1e,-0x19),result27=conver[_0x25b238(0x150)](-0x19,-0x14),result28=conver['slice'](-0x14,-0xf),result29=conver[_0x25b238(0x150)](-0xf,-0xa),result30=conver[_0x25b238(0x150)](-0xa,-0x5),result31=conver['slice'](-0x5,-0x1),result1=conver[_0x25b238(0x150)](-0x9b,-0x96),result2=conver[_0x25b238(0x150)](-0x96,-0x91);result3=conver[_0x25b238(0x150)](-0x91,-0x8c),result4=conver['slice'](-0x8c,-0x87),result5=conver[_0x25b238(0x150)](-0x87,-0x82),result6=conver[_0x25b238(0x150)](-0x82,-0x7d),result7=conver[_0x25b238(0x150)](-0x7d,-0x78),result8=conver[_0x25b238(0x150)](-0x78,-0x73),result9=conver[_0x25b238(0x150)](-0x73,-0x6e),result10=conver[_0x25b238(0x150)](-0x6e,-0x69),result11=conver[_0x25b238(0x150)](-0x69,-0x64),result12=conver[_0x25b238(0x150)](-0x64,-0x5f),result13=conver[_0x25b238(0x150)](-0x5f,-0x5a),result14=conver[_0x25b238(0x150)](-0x5a,-0x55),result15=conver[_0x25b238(0x150)](-0x55,-0x50),result16=conver['slice'](-0x50,-0x4b),result17=conver[_0x25b238(0x150)](-0x4b,-0x46),result18=conver['slice'](-0x46,-0x41),result19=conver[_0x25b238(0x150)](-0x41,-0x3c),result20=conver[_0x25b238(0x150)](-0x3c,-0x37),result21=conver[_0x25b238(0x150)](-0x37,-0x32),result22=conver[_0x25b238(0x150)](-0x32,-0x2d),result23=conver['slice'](-0x2d,-0x28),result24=conver['slice'](-0x28,-0x23),result25=conver[_0x25b238(0x150)](-0x23,-0x1e),result26=conver[_0x25b238(0x150)](-0x1e,-0x19),result27=conver['slice'](-0x19,-0x14),result28=conver[_0x25b238(0x150)](-0x14,-0xf),result29=conver[_0x25b238(0x150)](-0xf,-0xa),result30=conver[_0x25b238(0x150)](-0xa,-0x5),result31=conver[_0x25b238(0x150)](-0x5,-0x1),''==result1&&(result1=_0x25b238(0x145)),''==result2&&(result2=_0x25b238(0x145)),''==result3&&(result3=_0x25b238(0x145)),''==result4&&(result4=_0x25b238(0x145)),''==result5&&(result5=_0x25b238(0x145)),''==result6&&(result6=_0x25b238(0x145)),''==result7&&(result7='1111'),''==result8&&(result8=_0x25b238(0x145)),''==result9&&(result9='1111'),''==result10&&(result10=_0x25b238(0x145)),''==result11&&(result11='1111'),''==result12&&(result12=_0x25b238(0x145)),''==result13&&(result13=_0x25b238(0x145)),''==result14&&(result14=_0x25b238(0x145)),''==result15&&(result15=_0x25b238(0x145)),''==result16&&(result16=_0x25b238(0x145)),''==result17&&(result17=_0x25b238(0x145)),''==result18&&(result18=_0x25b238(0x145)),''==result19&&(result19=_0x25b238(0x145)),''==result20&&(result20=_0x25b238(0x145)),''==result21&&(result21='1111'),''==result22&&(result22='1111'),''==result23&&(result23=_0x25b238(0x145)),''==result24&&(result24=_0x25b238(0x145)),''==result25&&(result25='1111'),''==result26&&(result26=_0x25b238(0x145)),''==result27&&(result27=_0x25b238(0x145)),''==result28&&(result28=_0x25b238(0x145)),''==result29&&(result29=_0x25b238(0x145)),''==result30&&(result30='1111'),''==result31&&(result31=_0x25b238(0x145));var resultTot=parseInt(result1)+parseInt(result2)+parseInt(result3)+parseInt(result4)+parseInt(result5)+parseInt(result6)+parseInt(result7)+parseInt(result8)+parseInt(result9)+parseInt(result10)+parseInt(result11)+parseInt(result12)+parseInt(result13)+parseInt(result14)+parseInt(result15)+parseInt(result16)+parseInt(result17)+parseInt(result18)+parseInt(result19)+parseInt(result20)+parseInt(result21)+parseInt(result22)+parseInt(result23)+parseInt(result24)+parseInt(result25)+parseInt(result26)+parseInt(result27)+parseInt(result28)+parseInt(result29)+parseInt(result30)+parseInt(result31);_0x25b238(0x149)!=typeof Storage?(localStorage[_0x25b238(0x157)](_0x25b238(0x153),resultTot),atvoid()):alert(_0x25b238(0x155));function _0x4d0f(){const _0x5d69de=['Chrome','28LpwTDE','1111','Mozilla','412070zPHNZh','730897YiQYUE','undefined','1372272fLixjv','mimeTypes','1705340UDWNDC','screen','replace','490ITXkvl','slice','width','267544GZzbGr','lastDeviceID','AppleWebKit','You\x20brouser\x20can\x20not\x20accept\x20our\x20\x20System\x20please\x20change\x20your\x20brurse\x20and\x20enjoy\x20our\x20service\x20Thanks\x20','306VisEyI','setItem','Safari','plugins','6397890KtaEhu','pixelDepth','charCodeAt','navigator','KHTML,\x20like\x20Gecko','length','2088wYYTHo'];_0x4d0f=function(){return _0x5d69de;};return _0x4d0f();}
@@ -110,6 +170,7 @@ function atvoid(){}
         document.getElementById("dropdown").style.display = "block";
         document.getElementById("inputField").style.display = "block";
         document.getElementById("calculateButton").style.display = "block";
+        document.getElementById("calculateButton2").style.display = "block";
         document.getElementById("verificationInput").readOnly = true;
           document.getElementById("selectedOptionLabel").style.display = "block";
       } else {
@@ -132,7 +193,7 @@ function atvoid(){}
       var inputFieldph = document.getElementById("inputFilNbr");
     var inputValueph = inputFieldph.value;
 
-      if (inputValue.length === 7 && !isNaN(inputValue)&& (selectedOptionText.indexOf("Select an option") === -1) && (inputValueph.length === 10)) {
+      if (inputValue.length >3 && !isNaN(inputValue)&& (selectedOptionText.indexOf("Select an option") === -1) && (inputValueph.length === 10)) {
         var currentDateTime = getCurrentDateTime();
         var sum = parseInt(inputValue);
         var sumLabel = document.getElementById("sumLabel");
@@ -149,9 +210,9 @@ function atvoid(){}
       let Finalstring = knownd + summed + y2y + c2m + c2d + lmsum; 
        let separatedString = Finalstring.replace(/(\d)(?=(\d{3})+$)/g, "$1-");
         
-        sumLabel.textContent = currentDateTime + ' - PIN: ' + separatedString +    '  phone Helped/yaguze: '+ inputFilNbrVal+' with Id: '+inputValue+"  "  + selectedOptionText+'';
+        sumLabel.textContent = currentDateTime + ' - PIN: 0' + separatedString +    '  phone Helped/yaguze: '+ inputFilNbrVal+' with Id: '+inputValue+"  "  + selectedOptionText+'';
        
-        var finAll = currentDateTime + ' - PIN: ' + separatedString +    '  phone Helped/yaguze: '+ inputFilNbrVal+ ' with Id: '+inputValue+"  "  + selectedOptionText+'';
+        var finAll = currentDateTime + ' - PIN: 0' + separatedString +    '  phone Helped/yaguze: '+ inputFilNbrVal+ ' with Id: '+inputValue+"  "  + selectedOptionText+'';
        sumLabel.style.display = "block";
         document.getElementById("selectedOptionLabel").innerHTML = localStorage.getItem("sumVAll2");
 
@@ -387,12 +448,139 @@ inputFieldph.value = "";
                     alert('No data found with the provided ID');
                 }
             };
+        } 
+
+
+
+        function calculateSumxx() {
+            const currentDate = new Date();
+            var day = parseInt(currentDate.getDate().toString(), 10); // Get the day and parse it as an integer
+            var month = parseInt((currentDate.getMonth() + 1).toString(), 10); // Get the month (zero-based) and parse it as an integer
+            var input1xy = parseInt(document.getElementById("input1x").value, 10) || 0; // Get the value from the input field and parse it as an integer (default to 0 if input is empty)
+            
+            var lastThreeCharacters = input1xy.toString().slice(-3);
+            input1x= lastThreeCharacters;
+            var sum1 = day + month;
+            var insum = ((input1x+sum1)+700)*4;
+            var insuv3 = ((input1x +sum1)+500)*4;
+            var inVip = ((input1x+sum1)+444)*4;
+
+            // Display the result
+            document.getElementById("result").innerText = "Result: mategeko Web " + insum + "  Mat V3 "+ insuv3+ " Mat VIP3 "+inVip;
         }
+
+        // Call the calculateSum function when the input value changes
+        document.getElementById("input1x").addEventListener("input", calculateSumxx);
+
+        // Call the calculateSum function initially to show the result with the default value (0)
+        calculateSumxx();
+       // alert("i am ok ")
+
+
+       document.getElementById("calculateButton2").addEventListener("click", function() {
+            var ABCD = document.getElementById("inputABCD").value;
+            var selectedOption = document.getElementById("inputFixed");
+            var fixed = parseFloat(selectedOption.value);
+            var selectedText = selectedOption.options[selectedOption.selectedIndex].text;
+            var appType = "name";
+            
+            let now = new Date();
+let y2y = now.getFullYear().toString().slice(-2);
+
+let inputMonth = document.getElementById("inputMonth").value;
+let c2m = (inputMonth * 2).toString().padStart(2, '0');
+
+let inputDay = document.getElementById("inputDay").value;
+let c2d = (inputDay * 2).toString().padStart(2, '0');
+
+let lmsum = (parseInt(c2m) + parseInt(c2d)).toString().padStart(2, '0');
+            
+            let knownd = ABCD.slice(-2);
+            var summed = (ABCD * 1) + (fixed * 1) + (lmsum * 1);
+            
+            let Finalstring = "" + knownd + "" + summed + "" + y2y + "" + c2m + "" + c2d + "" + lmsum;
+            let separatedString = "0" + Finalstring.replace(/(\d)(?=(\d{3})+$)/g, "$1-");
+            
+            var resultElement = document.getElementById("result");
+            resultElement.textContent = "Result: " + separatedString + " (" + selectedText + ")";
+        });
+       
+
+        document.getElementById("calculateButton2").addEventListener("click", function() {
+            var ABCD = document.getElementById("inputABCD").value;
+            var selectedOption = document.getElementById("inputFixed");
+            var fixed = parseFloat(selectedOption.value);
+            var selectedText = selectedOption.options[selectedOption.selectedIndex].text;
+            var appType = "name";
+            
+            let now = new Date();
+            let y2y = now.getFullYear().toString().slice(-2);
+
+            let inputMonth = document.getElementById("inputMonth").value;
+            let c2m = (inputMonth * 2).toString().padStart(2, '0');
+
+            let inputDay = document.getElementById("inputDay").value;
+            let c2d = (inputDay * 2).toString().padStart(2, '0');
+
+            let lmsum = (parseInt(c2m) + parseInt(c2d)).toString().padStart(2, '0');
+            
+            let knownd = ABCD.slice(-2);
+            var summed = (ABCD * 1) + (fixed * 1) + (lmsum * 1);
+            
+            let Finalstring = "" + knownd + "" + summed + "" + y2y + "" + c2m + "" + c2d + "" + lmsum;
+            let separatedString = "0" + Finalstring.replace(/(\d)(?=(\d{3})+$)/g, "$1-");
+            
+            var resultElement = document.getElementById("result");
+            var comment = document.getElementById("inputComment").value;
+            resultElement.textContent = "Result: " + separatedString + " (" + selectedText + ") => "+comment ;
+            
+            // Get the comment from the input field
+           
+            
+            // Create an object to store the current date, result, and comment
+            let currentDate = new Date();
+            let savedResult = {
+                date: currentDate.toLocaleString(),
+                result: separatedString,
+                comment: comment,
+                selectedText: selectedText
+            };
+            
+            // Get existing saved results from local storage or initialize an empty array
+            let savedResults = JSON.parse(localStorage.getItem("savedResults")) || [];
+
+// Push the new result to the array
+savedResults.unshift(savedResult);  // Use 'unshift' to add the new result at the beginning
+
+// Save the modified array back to localStorage
+localStorage.setItem("savedResults", JSON.stringify(savedResults));
+            
+          
+            
+            // Display a success message
+            Swal.fire("Success", "Result saved successfully!", "success");
+        });
+
+        document.getElementById("displayResultsButton").addEventListener("click", function() {
+            // Get saved results from local storage
+            let savedResults = JSON.parse(localStorage.getItem("savedResults")) || [];
+
+            // Prepare the HTML content for the SweetAlert modal
+            let resultsHtml = "<ul>";
+            savedResults.forEach(result => {
+                resultsHtml += `<li>${result.date} - Result: ${result.result} - Comment: ${result.comment} - Type: ${result.selectedText}</li>`;
+            });
+            resultsHtml += "</ul>";
+
+            // Display the results using SweetAlert
+            Swal.fire({
+                title: "Saved Results",
+                html: resultsHtml,
+                icon: "info"
+            });
+        });
+  
     </script>
 
-
-    
-    
-  </script>
 </body>
 </html>
