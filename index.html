@@ -477,11 +477,59 @@ inputFieldph.value = "";
        // alert("i am ok ")
 
 
-       document.getElementById("calculateButton2").addEventListener("click", function() {
-            var ABCD = document.getElementById("inputABCD").value;
+       document.getElementById("calculateButton2").addEventListener("click", function() { 
+
+        var inputElement = document.getElementById("inputABCD");
+    var inputValue = inputElement.value.trim();  // Trim whitespace from the input
+
+    if (inputValue !== "") {
+        alert("Input is not empty: " + inputValue); 
+
+       
+        const selectedMonth = document.getElementById("inputMonth").value;
+  const selectedDay = document.getElementById("inputDay").value;
+  const selectedFixedValue = parseInt(document.getElementById("inputFixed").value);
+
+  const selectedDate = new Date();
+  selectedDate.setMonth(parseInt(selectedMonth) - 1); // Months are 0-indexed
+  selectedDate.setDate(parseInt(selectedDay));
+
+  const currentDate = new Date();
+
+  const timeDifference = selectedDate.getTime() - currentDate.getTime();
+  let dayDifference = Math.floor(timeDifference / (1000 * 3600 * 24));
+
+  // Adjust the difference based on selectedFixedValue
+  var typed ="";
+  if (selectedFixedValue === 2800) {
+    dayDifference += 60;
+    typed = "Mateg Web"
+  } else if (selectedFixedValue === 3000) {
+    dayDifference += 60;
+    typed = "Mateg  V3 "
+  } else if (selectedFixedValue === 5500) {
+    dayDifference += 180;
+    typed = "Mateg  VIP3 "
+  }
+  
+  
+  Swal.fire({
+    title: "Activate this : "+inputValue +" on "+typed ,
+    text: `You give him  ${dayDifference} days.`,
+    icon: "info",
+    showCancelButton: true,
+    confirmButtonText: "Accept",
+    cancelButtonText: "Cancel",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // User accepted the calculation, you can do something here
+      
+
+      var ABCD = document.getElementById("inputABCD").value;
             var selectedOption = document.getElementById("inputFixed");
             var fixed = parseFloat(selectedOption.value);
             var selectedText = selectedOption.options[selectedOption.selectedIndex].text;
+           
             var appType = "name";
             
             let now = new Date();
@@ -503,8 +551,56 @@ let lmsum = (parseInt(c2m) + parseInt(c2d)).toString().padStart(2, '0');
             
             var resultElement = document.getElementById("result");
             resultElement.textContent = "Result: " + separatedString + " (" + selectedText + ")";
-        });
+           
+            var comment =  document.getElementById("inputComment").value;
+            var ABCD = document.getElementById("inputABCD").value;
+
+             // Get the comment from the input field
+           
+            
+            // Create an object to store the current date, result, and comment
+            let currentDate = new Date();
+            let savedResult = {
+                date: currentDate.toLocaleString(),
+                result: separatedString,
+                comment: comment,
+                ABCD:ABCD,
+                selectedText: selectedText
+            };
+            
+            // Get existing saved results from local storage or initialize an empty array
+            let savedResults = JSON.parse(localStorage.getItem("savedResults")) || [];
+
+// Push the new result to the array
+savedResults.unshift(savedResult);  // Use 'unshift' to add the new result at the beginning
+
+// Save the modified array back to localStorage
+localStorage.setItem("savedResults", JSON.stringify(savedResults));
+            
+Swal.fire("Accepted!", "You accepted the calculation.", "success");   
+      
+            // Display a success message
+          
+
+
+    } else if (result.isDismissed === Swal.DismissReason.cancel) {
+      // User canceled the calculation
+      Swal.fire("Cancelled", "You cancelled the calculation.", "error");
+    }
+  });
+
+
+    } else {
+        alert("Input is empty");
+    }
+
+        {
+           
        
+       
+       }   });
+       
+      /*
 
         document.getElementById("calculateButton2").addEventListener("click", function() {
             var ABCD = document.getElementById("inputABCD").value;
@@ -559,8 +655,9 @@ localStorage.setItem("savedResults", JSON.stringify(savedResults));
             
             // Display a success message
             Swal.fire("Success", "Result saved successfully!", "success");
-        });
+        }); 
 
+        */
         document.getElementById("displayResultsButton").addEventListener("click", function() {
             // Get saved results from local storage
             let savedResults = JSON.parse(localStorage.getItem("savedResults")) || [];
@@ -568,7 +665,7 @@ localStorage.setItem("savedResults", JSON.stringify(savedResults));
             // Prepare the HTML content for the SweetAlert modal
             let resultsHtml = "<ul>";
             savedResults.forEach(result => {
-                resultsHtml += `<li>${result.date} - Result: ${result.result} - Comment: ${result.comment} - Type: ${result.selectedText}</li>`;
+                resultsHtml += `<li>${result.date} - Result: ${result.result} - Comment: ${result.comment} - Type: ${result.selectedText} id: ${result.ABCD}</li>`;
             });
             resultsHtml += "</ul>";
 
