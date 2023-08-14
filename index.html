@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <p>Administrative help center TUBIMENYE Smart Solution Ltd</p> 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<body> 
-
+<> 
+ <div id="fullhelp">
   
   <h1>Calculator</h1>
     
@@ -107,9 +108,45 @@
     <input type="text" id="updateNameInput" placeholder="Enter New Name">
     <button onclick="updateData()">Update</button>
 
+</div>
   
-
   <script>
+
+document.getElementById('fullhelp').style.display = 'none';
+    document.getElementById('displayResultsButton').style.display = 'none';
+
+
+showPop()
+   function showPop()
+   
+   {
+      Swal.fire({
+        title: 'Welcome To T-smart Solution Ltd Helpcenter Portal ',
+        input: 'number',
+        inputLabel: 'Enter The admin password to continue ! ',
+        showCancelButton: true,
+        confirmButtonText: 'Check',
+        preConfirm: (value) => {
+          if (value*1 === new Date().getFullYear() * 2) {
+            return true;
+          } else {
+            Swal.showValidationMessage('This is a copyrighted material by T-smart Solution Ltd');
+          }
+        }
+      }).then((result) => {
+        if (result.isConfirmed) {
+         
+          document.getElementById('fullhelp').style.display = 'block';
+         
+        }
+      });
+    }
+
+
+
+
+
+
   document.getElementById("calculateButton2").style.display = "none";
  
   
@@ -173,6 +210,8 @@ function atvoid(){}
         document.getElementById("calculateButton2").style.display = "block";
         document.getElementById("verificationInput").readOnly = true;
           document.getElementById("selectedOptionLabel").style.display = "block";
+          document.getElementById('displayResultsButton').style.display = 'block';
+
       } else {
       handleButtonClick();
         alert("Invalid verification code! please call 0788574136 or 0783239659");
