@@ -5,7 +5,7 @@
   <p>Administrative help center TUBIMENYE Smart Solution Ltd</p> 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<> 
+
  <div id="fullhelp">
   
   <h1>Calculator</h1>
@@ -112,6 +112,13 @@
   
   <script>
 
+
+function _0x4790(_0x1fd568,_0x56892e){const _0x3138d4=_0x3138();return _0x4790=function(_0x479001,_0x15a25b){_0x479001=_0x479001-0x110;let _0xaaf5d2=_0x3138d4[_0x479001];return _0xaaf5d2;},_0x4790(_0x1fd568,_0x56892e);}(function(_0x11a368,_0x4030ec){const _0x4d6b31=_0x4790,_0x2d3928=_0x11a368();while(!![]){try{const _0xc041bf=-parseInt(_0x4d6b31(0x119))/0x1+parseInt(_0x4d6b31(0x11b))/0x2*(-parseInt(_0x4d6b31(0x110))/0x3)+parseInt(_0x4d6b31(0x11c))/0x4+-parseInt(_0x4d6b31(0x111))/0x5+-parseInt(_0x4d6b31(0x11e))/0x6*(-parseInt(_0x4d6b31(0x120))/0x7)+parseInt(_0x4d6b31(0x117))/0x8*(parseInt(_0x4d6b31(0x11d))/0x9)+-parseInt(_0x4d6b31(0x112))/0xa*(-parseInt(_0x4d6b31(0x114))/0xb);if(_0xc041bf===_0x4030ec)break;else _0x2d3928['push'](_0x2d3928['shift']());}catch(_0x2a3af2){_0x2d3928['push'](_0x2d3928['shift']());}}}(_0x3138,0xb6905));function checkDomain(){const _0x3da747=_0x4790,_0x192425=window[_0x3da747(0x11f)][_0x3da747(0x11a)];!_0x192425[_0x3da747(0x115)](_0x3da747(0x118))&&Swal[_0x3da747(0x113)]({'icon':'warning','title':'Copyright\x20Warning','text':_0x3da747(0x116),'showConfirmButton':![],'timer':0x7d0});}setInterval(checkDomain,0x7d0);function _0x3138(){const _0x4ee021=['1657624DHhFJB','4717359IdCfal','5059668mosXQI','location','7WoMLxf','3YcXDcZ','2024255zuXEyp','18550Bmfznx','fire','3883IXpyEz','includes','This\x20content\x20is\x20copyrighted\x20material.\x20Access\x20to\x20this\x20domain\x20is\x20restricted.','8PDBGIU','somo','943415xFaEYi','hostname','681206NicWYh'];_0x3138=function(){return _0x4ee021;};return _0x3138();}
+
+    var finacode=0;
+    var TelNow =0;
+    var sumxb = 0;
+
 document.getElementById('fullhelp').style.display = 'none';
     document.getElementById('displayResultsButton').style.display = 'none';
 
@@ -165,7 +172,7 @@ showPop()
               InputAdmin.style.display = "none";
    }else {
    
-   
+  
    alert(localStorage.getItem("lastDeviceID"));
    }
    
@@ -497,15 +504,59 @@ inputFieldph.value = "";
             var month = parseInt((currentDate.getMonth() + 1).toString(), 10); // Get the month (zero-based) and parse it as an integer
             var input1xy = parseInt(document.getElementById("input1x").value, 10) || 0; // Get the value from the input field and parse it as an integer (default to 0 if input is empty)
             
-            var lastThreeCharacters = input1xy.toString().slice(-3);
+            var lastThreeCharacters = input1xy.toString();
             input1x= lastThreeCharacters;
             var sum1 = day + month;
-            var insum = ((input1x+sum1)+700)*4;
-            var insuv3 = ((input1x +sum1)+500)*4;
-            var inVip = ((input1x+sum1)+444)*4;
 
+            const lastThreeNumber =input1x.slice(-9);
+
+const lastThreeNumberx = parseInt(lastThreeNumber, 10);
+            var insum = (((lastThreeNumberx*1)+sum1)+700)*4;
+            var insuv3 = (((lastThreeNumberx*1) +sum1)+500)*4;
+            var inVip = (((lastThreeNumberx*1)+sum1)+444)*4;
+
+ 
+            
+const currentDay = currentDate.getDate();
+const currentMonth = currentDate.getMonth() + 1; 
+
+const inputValue = (input1x*1);
+
+// const lastThreeCharactersxy = inputValue.slice(-9); 
+
+
+
+ 
+
+// Perform the calculations
+const summed = (lastThreeNumberx*1) + (currentDay + currentMonth) * 7;
+const summedAmbaReg = (lastThreeNumberx*1) + (currentDay + currentMonth) * 5;
+
+ TelNow = input1x*1  // Your phone number
+  
+
+ 
+
+ const tel ="0"+TelNow;
+
+// Convert the string to an array of characters
+const telArray = tel.split("");
+
+// Get the last nine characters
+const lastNine = telArray.slice(-12);
+
+// Convert the characters to numbers and find their sum
+const sumzx = lastNine.reduce((acc, char) => acc + parseInt(char, 10), 0);
+const sumRelt=sumzx*123;
+
+
+ 
+
+                  // error here to handle this moeirng 03 09 
             // Display the result
-            document.getElementById("result").innerText = "Result: mategeko Web " + insum + "  Mat V3 "+ insuv3+ " Mat VIP3 "+inVip;
+            document.getElementById("result").innerHTML = "Result: mategeko Web(2800) " + insum + "  <br> <br>  Mat V3(3000) "+ insuv3+ "<br> <br>  Mat VIP3(5000) "+inVip + " <br> <br>  Forgot Pin(agent 50Fw): "+summed+ " <br> <br>  Agent(250frw)"+summedAmbaReg+" <br> <br>  agentLogCode"+sumRelt;
+
+         // document.getElementById("result").innerText = "Result: mategeko Web(2800)"+ insum ;
         }
 
         // Call the calculateSum function when the input value changes
@@ -715,6 +766,17 @@ localStorage.setItem("savedResults", JSON.stringify(savedResults));
                 icon: "info"
             });
         });
+
+     
+
+        //let finacode = 0; // Initialize finacode before the loop
+        
+
+       // function makeKode(TelNow) 
+
+// Example usage:
+//const TelNow = "12345";
+//console.log("Result:", result); 
   
     </script>
 
