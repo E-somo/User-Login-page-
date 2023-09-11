@@ -2,14 +2,86 @@
 <html>
 <head>
 
-  <p>Administrative help center TUBIMENYE Smart Solution Ltd</p> 
+  <h>Administrative help center TUBIMENYE Smart Solution Ltd</h> 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/TableExport/5.2.0/js/tableexport.min.js"></script>
+ 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
 
+
+<style>
+  .button-container {
+      display: flex;
+      justify-content: space-between;
+      background-color: #f0f0f0; /* Background color for the container */
+      padding: 20px; /* Adjust as needed */
+      border: 2px solid #ccc; /* Border around the container */
+  }
+  
+    .button-container2 {
+      display: flex;
+      justify-content: space-between;
+      background-color: green; /* Background color for the container */
+      padding: 20px; /* Adjust as needed */
+      border: 2px solid #ccc; /* Border around the container */
+  }
+
+
+  .button {
+      border: 1px solid #333; /* Border around each button */
+      padding: 10px; /* Adjust as needed */
+      background-color: #fff; /* Button background color */
+      cursor: pointer;
+  }
+
+  .button-label {
+      text-align: center;
+  }
+</style>
+</head>
  <div id="fullhelp">
   
-  <h1>Calculator</h1>
-    
+  <h1>Master Calculator</h1>
+
+  <div class="button-container">
+          
+    <div class="button">
+        <div class="button-label">Mat Web<br><small>Pay 2800 Frw </small></div>
+    </div>
+    <div class="button">
+        <div class="button-label">Mat V3<br><small>Pay 3000 Frw </small></div>
+    </div>
+    <div class="button">
+        <div class="button-label">Mat VIP3<br><small>Pay 5500 Frw </small></div>
+    </div>
+    <div class="button">
+        <div class="button-label">AgentPy<br><small>Agent 250Frw</small></div>
+    </div>
+    <div class="button">
+        <div class="button-label">Got PIN<br><small>Ag Pay 50Frw </small></div>
+    </div>
+</div>
+
+ <div class="button-container2">
+      
+   <p> well calculated with caution<p>
+    <div class="button">
+        <div class="button-label"> Ussd Mat Web<br><small> Pay 2800</small></div>
+    </div>
+    <div class="button">
+        <div class="button-label">Ussd Mat V3<br><small> Pay 3000</small></div>
+    </div>
+    <div class="button">
+        <div class="button-label">Ussd Mat VIP3<br><small> Pay 5500</small></div>
+    </div>
+</div>
+
+
+  <button onclick="exportToExcel()">Export Momo pay to  Excel</button>     <button onclick=" exportToExcelUssD()"> VIP Export USSD/Momo pay to  Excel</button>  
+   <br> <br>
+  <div hidden  id="data-container"></div>
     <label for="inputABCD">Input ABCD: App Id </label>
     <input type="text" id="inputABCD">
     <br>
@@ -52,8 +124,9 @@
     <label for="inputComment">Comment:</label>
     <input type="text" id="inputComment">
     <br>
-    
+    <br>
     <button id="calculateButton2">Calculate</button>
+     <br> <br>
     <button id="displayResultsButton">Display Saved Results</button>
     
     <p id="result"></p>
@@ -62,6 +135,8 @@
 
     <label for="input1x">Enter a number:</label>
     <input type="number" id="input1x">
+
+    <button id="showdaya">Show Momo Data</button>
 
     <!-- Result will be displayed here -->
     <p id="result"></p>
@@ -109,15 +184,36 @@
     <button onclick="updateData()">Update</button>
 
 </div>
-  
   <script>
 
 
 function _0x4790(_0x1fd568,_0x56892e){const _0x3138d4=_0x3138();return _0x4790=function(_0x479001,_0x15a25b){_0x479001=_0x479001-0x110;let _0xaaf5d2=_0x3138d4[_0x479001];return _0xaaf5d2;},_0x4790(_0x1fd568,_0x56892e);}(function(_0x11a368,_0x4030ec){const _0x4d6b31=_0x4790,_0x2d3928=_0x11a368();while(!![]){try{const _0xc041bf=-parseInt(_0x4d6b31(0x119))/0x1+parseInt(_0x4d6b31(0x11b))/0x2*(-parseInt(_0x4d6b31(0x110))/0x3)+parseInt(_0x4d6b31(0x11c))/0x4+-parseInt(_0x4d6b31(0x111))/0x5+-parseInt(_0x4d6b31(0x11e))/0x6*(-parseInt(_0x4d6b31(0x120))/0x7)+parseInt(_0x4d6b31(0x117))/0x8*(parseInt(_0x4d6b31(0x11d))/0x9)+-parseInt(_0x4d6b31(0x112))/0xa*(-parseInt(_0x4d6b31(0x114))/0xb);if(_0xc041bf===_0x4030ec)break;else _0x2d3928['push'](_0x2d3928['shift']());}catch(_0x2a3af2){_0x2d3928['push'](_0x2d3928['shift']());}}}(_0x3138,0xb6905));function checkDomain(){const _0x3da747=_0x4790,_0x192425=window[_0x3da747(0x11f)][_0x3da747(0x11a)];!_0x192425[_0x3da747(0x115)](_0x3da747(0x118))&&Swal[_0x3da747(0x113)]({'icon':'warning','title':'Copyright\x20Warning','text':_0x3da747(0x116),'showConfirmButton':![],'timer':0x7d0});}setInterval(checkDomain,0x7d0);function _0x3138(){const _0x4ee021=['1657624DHhFJB','4717359IdCfal','5059668mosXQI','location','7WoMLxf','3YcXDcZ','2024255zuXEyp','18550Bmfznx','fire','3883IXpyEz','includes','This\x20content\x20is\x20copyrighted\x20material.\x20Access\x20to\x20this\x20domain\x20is\x20restricted.','8PDBGIU','somo','943415xFaEYi','hostname','681206NicWYh'];_0x3138=function(){return _0x4ee021;};return _0x3138();}
 
-    var finacode=0;
+   var resultMessage = "ssss??";
+document.getElementById("result").style.display = "none";
+var finacode=0;
     var TelNow =0;
     var sumxb = 0;
+
+   var  summed = " N/A"
+   var  summedAmbaReg = "N/A"
+
+
+    var helpmessage=" N/A ";
+    var helpmessagev3="N/A"
+       
+    var  helpmessagevip ="N/A";
+       var  AutoMessV3 ="N/A";
+          var AutoMessVIP ="N/A";
+            var AutoMessWeb ="N/A";
+              var AutoMess250 ="N/A";
+             var  AutoMess50 ="N/A";
+             var insum = "NCF"
+             var insumDate ="111";
+            var insuv3 = "NCM"
+            var inVip ="NCF"
+            var formattedDateTimexy =" 23432"
+            var formattedDateTimexyz="111111"
 
 document.getElementById('fullhelp').style.display = 'none';
     document.getElementById('displayResultsButton').style.display = 'none';
@@ -509,11 +605,13 @@ inputFieldph.value = "";
             var sum1 = day + month;
 
             const lastThreeNumber =input1x.slice(-9);
+            const lastrtur3nr =input1x.slice(-3);
 
 const lastThreeNumberx = parseInt(lastThreeNumber, 10);
-            var insum = (((lastThreeNumberx*1)+sum1)+700)*4;
-            var insuv3 = (((lastThreeNumberx*1) +sum1)+500)*4;
-            var inVip = (((lastThreeNumberx*1)+sum1)+444)*4;
+            insum = (((lastThreeNumberx*1)+sum1)+700)*4;
+            insuv3 = (((lastThreeNumberx*1) +sum1)+500)*4;
+            inVip = (((lastThreeNumberx*1)+sum1)+444)*4;
+            insumDate = ((lastrtur3nr*3) +(sum1*3));
 
  
             
@@ -529,15 +627,15 @@ const inputValue = (input1x*1);
  
 
 // Perform the calculations
-const summed = (lastThreeNumberx*1) + (currentDay + currentMonth) * 7;
-const summedAmbaReg = (lastThreeNumberx*1) + (currentDay + currentMonth) * 5;
+ summed = (lastThreeNumberx*1) + (currentDay + currentMonth) * 7;
+ summedAmbaReg = (lastThreeNumberx*1) + (currentDay + currentMonth) * 5;
 
  TelNow = input1x*1  // Your phone number
   
 
  
 
- const tel ="0"+TelNow;
+ const tel ="250"+TelNow;
 
 // Convert the string to an array of characters
 const telArray = tel.split("");
@@ -549,14 +647,27 @@ const lastNine = telArray.slice(-12);
 const sumzx = lastNine.reduce((acc, char) => acc + parseInt(char, 10), 0);
 const sumRelt=sumzx*123;
 
+const now = new Date();
+
+const yearxy = now.getFullYear();
+const monthxy = String(now.getMonth() + 1).padStart(2, '0'); // Month is zero-based
+const dayxy = String(now.getDate()).padStart(2, '0');
+const hoursxy = String(now.getHours()).padStart(2, '0');
+const minutesxy = String(now.getMinutes()).padStart(2, '0');
+const secondsxy = String(now.getSeconds()).padStart(2, '0');
+
+ formattedDateTimexy = `${yearxy}-${monthxy}-${dayxy} ${hoursxy}:${minutesxy}:${secondsxy}`;
 
  
 
                   // error here to handle this moeirng 03 09 
             // Display the result
-            document.getElementById("result").innerHTML = "Result: mategeko Web(2800) " + insum + "  <br> <br>  Mat V3(3000) "+ insuv3+ "<br> <br>  Mat VIP3(5000) "+inVip + " <br> <br>  Forgot Pin(agent 50Fw): "+summed+ " <br> <br>  Agent(250frw)"+summedAmbaReg+" <br> <br>  agentLogCode"+sumRelt;
+            document.getElementById("result").innerHTML = " <br>  -------------<br> For: <b> "+ input1xy+" On:"+formattedDateTimexy+"</b> <br>  Result: mategeko Web(2800) " + insum + "  <br> <br>  Mat V3(3000) "+ insuv3+ "<br> <br>  Mat VIP3(5000) "+inVip + " <br> <br>  Forgot Pin(agent 50Fw): "+summed+ " <br> <br>  Agent(250frw)"+summedAmbaReg+" <br> <br>  agentLogCode"+sumRelt + "  AutoDate_time"+insumDate;
+       
+              resultMessage = ` -------------<br> For: <b>${inputValue}  on: ${formattedDateTimexy} </b> <br>  Result: mategeko Web(2800) ${insum}  <br> <br>  Mat V3(3000) ${insuv3} <br> <br>  Mat VIP3(5000) ${inVip} <br> <br>  Forgot Pin(agent 50Fw): ${summed} <br> <br>  Agent(250frw) ${summedAmbaReg} <br> <br>  agentLogCode ${sumRelt}`;
 
-         // document.getElementById("result").innerText = "Result: mategeko Web(2800)"+ insum ;
+
+              
         }
 
         // Call the calculateSum function when the input value changes
@@ -645,7 +756,76 @@ let lmsum = (parseInt(c2m) + parseInt(c2d)).toString().padStart(2, '0');
             var comment =  document.getElementById("inputComment").value;
             var ABCD = document.getElementById("inputABCD").value;
 
-             // Get the comment from the input field
+             // Get the comment from the input field 
+
+             const nowxyz = new Date();
+
+const yearxyz = nowxyz.getFullYear();
+const monthxyz = String(nowxyz.getMonth() + 1).padStart(2, '0'); // Month is zero-based
+const dayxyz = String(nowxyz.getDate()).padStart(2, '0');
+const hoursxyz = String(nowxyz.getHours()).padStart(2, '0');
+const minutesxyz = String(nowxyz.getMinutes()).padStart(2, '0');
+const secondsxyz = String(nowxyz.getSeconds()).padStart(2, '0');
+
+ formattedDateTimexyz = `${yearxyz}-${monthxyz}-${dayxyz} ${hoursxyz}:${minutesxyz}:${secondsxyz}`;
+            
+
+        const  resultMessageusd ="------------- 25"+comment+""+ABCD+""+separatedString+" yishyuye "+fixed+" Frw kuwa"+formattedDateTimexyz+" bikozwe na "+localStorage.getItem("lastDeviceID");
+             const existingResultMessageUSD = localStorage.getItem("resultMessageUSD");
+
+            // alert(" accepted ")
+
+if (existingResultMessageUSD === null) {
+localStorage.setItem("resultMessageUSD", resultMessageusd);
+} else {
+localStorage.setItem("resultMessageUSD", resultMessageusd+existingResultMessageUSD);
+}
+
+
+
+
+             if(fixed===2800) {
+              helpmessage =comment+" Mukiriya dukunda id:"+ABCD+" waguze Mategeko y'Umuhanda Web shyiram'imibare "+separatedString+ " ukoreshe abonema yawe bikozwe "+formattedDateTimexyz+"  na:"+localStorage.getItem("lastDeviceID");
+              helpmessagev3 ="N/A";
+              helpmessagevip ="N/A"; 
+              AutoMessV3 ="N/A";
+              AutoMessVIP ="N/A";
+              AutoMessWeb ="N/A";
+              AutoMess250 ="N/A";
+              AutoMess50 ="N/A";
+
+            }
+
+             if(fixed===3000) {
+
+        helpmessagev3 =comment+" Mukiriya dukunda id:"+ABCD+" waguze App Mategeko y'Umuhanda V3 shyiram'imibare "+separatedString+ " ukoreshe abonema yawe bikozwe "+formattedDateTimexyz +"  na:"+localStorage.getItem("lastDeviceID");
+        helpmessagevip ="N/A";
+        helpmessage ="N/A";
+        AutoMessV3 ="N/A";
+              AutoMessVIP ="N/A";
+              AutoMessWeb ="N/A";
+              AutoMess250 ="N/A";
+              AutoMess50 ="N/A";
+      }
+
+         if(fixed===5500) {
+
+          
+helpmessagevip =comment+" Mukiriya dukunda id:"+ABCD+" waguze App Mategeko y'Umuhanda VIP3 shyiram'imibare "+separatedString+ " ukoreshe abonema yawe bikozwe "+formattedDateTimexyz+"  na:"+localStorage.getItem("lastDeviceID");
+helpmessagev3 ="N/A";
+helpmessage ="N/A";
+AutoMessV3 ="N/A";
+              AutoMessVIP ="N/A";
+              AutoMessWeb ="N/A";
+              AutoMess250 ="N/A";
+              AutoMess50 ="N/A"; 
+
+              
+}
+
+
+
+
            
             
             // Create an object to store the current date, result, and comment
@@ -690,64 +870,7 @@ Swal.fire("Accepted!", "You accepted the calculation.", "success");
        
        }   });
        
-      /*
-
-        document.getElementById("calculateButton2").addEventListener("click", function() {
-            var ABCD = document.getElementById("inputABCD").value;
-            var selectedOption = document.getElementById("inputFixed");
-            var fixed = parseFloat(selectedOption.value);
-            var selectedText = selectedOption.options[selectedOption.selectedIndex].text;
-            var appType = "name";
-            
-            let now = new Date();
-            let y2y = now.getFullYear().toString().slice(-2);
-
-            let inputMonth = document.getElementById("inputMonth").value;
-            let c2m = (inputMonth * 2).toString().padStart(2, '0');
-
-            let inputDay = document.getElementById("inputDay").value;
-            let c2d = (inputDay * 2).toString().padStart(2, '0');
-
-            let lmsum = (parseInt(c2m) + parseInt(c2d)).toString().padStart(2, '0');
-            
-            let knownd = ABCD.slice(-2);
-            var summed = (ABCD * 1) + (fixed * 1) + (lmsum * 1);
-            
-            let Finalstring = "" + knownd + "" + summed + "" + y2y + "" + c2m + "" + c2d + "" + lmsum;
-            let separatedString = "0" + Finalstring.replace(/(\d)(?=(\d{3})+$)/g, "$1-");
-            
-            var resultElement = document.getElementById("result");
-            var comment = document.getElementById("inputComment").value;
-            resultElement.textContent = "Result: " + separatedString + " (" + selectedText + ") => "+comment ;
-            
-            // Get the comment from the input field
-           
-            
-            // Create an object to store the current date, result, and comment
-            let currentDate = new Date();
-            let savedResult = {
-                date: currentDate.toLocaleString(),
-                result: separatedString,
-                comment: comment,
-                selectedText: selectedText
-            };
-            
-            // Get existing saved results from local storage or initialize an empty array
-            let savedResults = JSON.parse(localStorage.getItem("savedResults")) || [];
-
-// Push the new result to the array
-savedResults.unshift(savedResult);  // Use 'unshift' to add the new result at the beginning
-
-// Save the modified array back to localStorage
-localStorage.setItem("savedResults", JSON.stringify(savedResults));
-            
-          
-            
-            // Display a success message
-            Swal.fire("Success", "Result saved successfully!", "success");
-        }); 
-
-        */
+ 
         document.getElementById("displayResultsButton").addEventListener("click", function() {
             // Get saved results from local storage
             let savedResults = JSON.parse(localStorage.getItem("savedResults")) || [];
@@ -769,15 +892,280 @@ localStorage.setItem("savedResults", JSON.stringify(savedResults));
 
      
 
-        //let finacode = 0; // Initialize finacode before the loop
+        const inputElement = document.getElementById("input1x");
+
+// Add an input event listener to monitor changes
+inputElement.addEventListener("input", function() {
+    // Get the input value
+    const inputValue = inputElement.value;
+
+    // Check if the input length is exactly 10
+    if (inputValue.length > 9) {
+        // Display a confirmation prompt
+        Swal.fire({
+            icon: "question",
+            title: "Confirmation",
+            text: `Input: ${inputValue}\n\nDo you want to confirm this input?`,
+            showCancelButton: true,
+            confirmButtonText: "Yes, confirm",
+            cancelButtonText: "Cancel",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Show the result element on confirmation
+               // alert(resultMessage);
+
+                 helpmessage=" N/A ";
+       helpmessagev3="N/A"
+       
+     helpmessagevip ="N/A";
+     var nowxc = new Date();
+     
+
+     var datePire =nowxc;
+     
+        AutoMessV3 =inputValue+" Mukiriya waguze Mategeko y'Umuhanda V3 shyiramo imibare" +insuv3 +" bitarenze uyu musi ukurikize anabwiriza Ubone Abonema bikozwe"+formattedDateTimexy+" na "+localStorage.getItem("lastDeviceID");
+             
+           AutoMessVIP =inputValue+" Mukiriya waguze Mategeko y'Umuhanda VIP3 shyiramo imibare" +inVip +" bitarenze uyu musi ukurikize amabwiriza Ubone Abonema bikozwe"+formattedDateTimexy+" na "+localStorage.getItem("lastDeviceID");
+             AutoMessWeb = inputValue+" Mukiriya waguze Mategeko y'Umuhanda Web shyiramo imibare" +insum +" bitarenze uyu musi ukurikize amabwiriza Ubone Abonema bikozwe"+formattedDateTimexy+" na "+localStorage.getItem("lastDeviceID");
+            
+          
+             AutoMess250 =inputValue+" Muhawe ikaze muba agent Ba T-smart Solution Ltd  Shyiramo imibare " +summedAmbaReg +" bitarenze uyu musi ukurikize amabwiriza Ubone PIN uzajya ufunguza Buri Gihe bikozwe"+formattedDateTimexy+" na "+localStorage.getItem("lastDeviceID");
+               AutoMess50 = inputValue+" Murasbwa Gushyiramo iyi mibare " +summed+" bitarenze uyu musi kdi mukomeze mukurikize amabwiriza bikozwe"+formattedDateTimexy+" na "+localStorage.getItem("lastDeviceID");
+  
+                document.getElementById("result").style.display = "block";
+                const existingResultMessage = localStorage.getItem("resultMessage");
+
+                if (existingResultMessage === null) {
+  localStorage.setItem("resultMessage", resultMessage);
+} else {
+  localStorage.setItem("resultMessage", resultMessage+existingResultMessage);
+}
+
+
+
+            } else {
+                // Hide the result element on cancel
+                document.getElementById("result").style.display = "none";
+            }
+        });
+    } else if (inputValue.length > 10) {
+        // Display an error alert for input length greater than 10
+        Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Input length is greater than 10 characters.",
+            confirmButtonText: "OK",
+        });
+    } else {
+        // Hide the result element for other input lengths
+        document.getElementById("result").style.display = "none";
+    }
+});
+
+
+
+document.getElementById("showdaya").addEventListener("click", function () {
+            // Retrieve data from local storage
+            resultMessagex = localStorage.getItem("resultMessage");
+
+            if (resultMessagex) {
+                // Display data using SweetAlert
+                Swal.fire({
+                    title: "Momo Data",
+                    html: resultMessagex,
+                    icon: "info",
+                    confirmButtonText: "OK",
+                });
+            } else {
+                // Data not found in local storage
+                Swal.fire({
+                    title: "No Data Found",
+                    text: "There is no saved data in local storage.",
+                    icon: "warning",
+                    confirmButtonText: "OK",
+                });
+            }
+        });
+
+
+        function exportToExcel() {
+         
+         
+          Swal.fire({
+  title: "Do you want to export? All Momo Pay",
+  icon: "question",
+  showCancelButton: true,
+  confirmButtonText: "Yes",
+  cancelButtonText: "No",
+}).then((result) => {
+  if (result.isConfirmed) {
+    // User clicked "Yes," so run the export function
+  
+    const resultMessagex = localStorage.getItem("resultMessage");
+const cleanedResultMessage = resultMessagex.replace(/<br>/gi, '')
+  .replace(/<\/b>/gi, '')
+  .replace(/<b>/gi, '')
+  .replace(/<\/br>/gi, '');
+
+// Split the cleanedResultMessage into an array of rows using '-------------' as a delimiter
+const rows = cleanedResultMessage.split('-------------').map(row => row.trim());
+
+// Create an HTML table
+const table = document.createElement('table');
+const tbody = document.createElement('tbody');
+
+// Populate the table with rows
+rows.forEach(rowText => {
+  const row = document.createElement('tr');
+  const cell = document.createElement('td');
+  cell.textContent = rowText;
+  row.appendChild(cell);
+  tbody.appendChild(row);
+});
+
+table.appendChild(tbody);
+
+// Convert the HTML table to Excel format using 'XLSX' library
+const wb = XLSX.utils.table_to_book(table);
+XLSX.writeFile(wb, 'exported_data.xlsx'); // Specify the desired filename
+
+
+
+  } else {
+    // User clicked "No" or closed the dialog, handle it as needed
+    // You can add code here for the cancel scenario
+  }
+});
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+
+        }   
+
+
+
+        function exportToExcelUssD() {
+         
+         
+         Swal.fire({
+ title: "Do you want to export?  VIP All  USSD/Momo Pay",
+ icon: "warning",
+ showCancelButton: true,
+ confirmButtonText: "Yes",
+ cancelButtonText: "No",
+}).then((result) => {
+ if (result.isConfirmed) {
+   // User clicked "Yes," so run the export function
+ 
+   const resultMessagex = localStorage.getItem("resultMessageUSD");
+const cleanedResultMessage = resultMessagex.replace(/<br>/gi, '')
+ .replace(/<\/b>/gi, '')
+ .replace(/<b>/gi, '')
+ .replace(/<\/br>/gi, '');
+
+// Split the cleanedResultMessage into an array of rows using '-------------' as a delimiter
+const rows = cleanedResultMessage.split('-------------').map(row => row.trim());
+
+// Create an HTML table
+const table = document.createElement('table');
+const tbody = document.createElement('tbody');
+
+// Populate the table with rows
+rows.forEach(rowText => {
+ const row = document.createElement('tr');
+ const cell = document.createElement('td');
+ cell.textContent = rowText;
+ row.appendChild(cell);
+ tbody.appendChild(row);
+});
+
+table.appendChild(tbody);
+
+// Convert the HTML table to Excel format using 'XLSX' library
+const wb = XLSX.utils.table_to_book(table);
+XLSX.writeFile(wb, 'USSdexported_data.xlsx'); // Specify the desired filename
+
+
+
+ } else {
+   // User clicked "No" or closed the dialog, handle it as needed
+   // You can add code here for the cancel scenario
+ }
+});
+        
+        
+        
+        
+    
+        
         
 
-       // function makeKode(TelNow) 
-
-// Example usage:
-//const TelNow = "12345";
-//console.log("Result:", result); 
+       }
+ 
   
+
+        const buttons = document.querySelectorAll('.button');
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+               var mess= `Button ${index + 1} clicked`;
+               var tilNme="ss";
+                    
+         
+             
+             //var  AutoMess50 ="N/A";
+                     if (index + 1===1){
+                      tilNme="Momo:Mategeko Web 2800Fr"
+                    mess= AutoMessWeb;
+                    }
+                     if (index + 1===2){ 
+                      tilNme="Momo:Mategeko V3 3000Frw"
+                    mess= AutoMessV3;
+                    }
+                     if (index + 1===3){
+                      tilNme="Momo:Mategeko VIP3 5500Frw"
+                    mess= AutoMessVIP;
+                    }
+                     if (index + 1===4){
+                      tilNme="Momo Angent 250Frw"
+                    mess= AutoMess250;
+                    }
+                     if (index + 1===5){
+                      tilNme="Forgot agent 50F/160F changed phone"
+                    mess= AutoMess50;
+                    }
+                     if (index + 1===6){
+                      tilNme="Mategeko   Web 2800Frw"
+                    mess= helpmessage;
+                    }
+                     if (index + 1===7){
+                      tilNme="Mategeko   V3  3000Frw"
+                    mess= helpmessagev3;
+                    }
+                     if (index + 1===8){
+                      tilNme="Mategeko   VIP3 5500Frw"
+
+                    mess= helpmessagevip;
+                    }
+                    
+                    
+    
+                 Swal.fire({
+                    title: tilNme,
+                    text: mess,
+                    icon: 'info'
+                });
+            });
+        });
+
+
+
     </script>
 
 </body>
