@@ -81,6 +81,8 @@
 
   <button onclick="exportToExcel()">Export Momo pay to  Excel</button>     <button onclick=" exportToExcelUssD()"> VIP Export USSD/Momo pay to  Excel</button>  
    <br> <br>
+   <button onclick="openSweetAlert()">Actvate AI face Attendance</button>
+<button onclick="viewHistory()">View AI F.A History</button>
   <div hidden  id="data-container"></div>
     <label for="inputABCD">Input ABCD: App Id </label>
     <input type="text" id="inputABCD">
@@ -1165,6 +1167,90 @@ XLSX.writeFile(wb, 'USSdexported_data.xlsx'); // Specify the desired filename
         });
 
 
+
+   function openSweetAlert() {
+        Swal.fire({
+            title: 'Enter user Data',
+            html:
+                '<input id="input1" class="swal2-input" placeholder="Enter device Id ">' +
+                '<input id="input2" class="swal2-input" placeholder="Enter E-mail secure token">',
+            showCancelButton: true,
+            confirmButtonText: 'Submit',
+            preConfirm: () => {
+                const inputValue1 = parseFloat(Swal.getPopup().querySelector('#input1').value);
+                const inputValue2 = Swal.getPopup().querySelector('#input2').value;
+
+                if (isNaN(inputValue1)) {
+                    Swal.showValidationMessage('Please enter a valid number for input1.');
+                }
+
+                return { inputValue1, inputValue2 };
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const { inputValue1, inputValue2 } = result.value;
+
+                const result1 = inputValue1 * 3 + inputValue2 + inputValue1 * 4;
+                const result2 = (inputValue1 + 111) * 3;
+
+                // Save to local storage with current date and time
+                const currentDateTime = new Date().toLocaleString('en-GB', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                });
+
+                const historyEntry = {
+                    dateTime: currentDateTime,
+                    result1: result1,
+                    result2: result2
+                };
+
+                const history = JSON.parse(localStorage.getItem('history')) || [];
+                history.push(historyEntry);
+                localStorage.setItem('history', JSON.stringify(history));
+
+                Swal.fire({
+                    title: 'Results',
+                    html: `<p> <br>E-mail server PWD: ${result1}</p><br><p> Disable_Enable Automation PWD: ${result2}</p> <br><br>`,
+                    icon: 'success'
+                });
+            }
+        });
+    }
+
+    function viewHistory() {
+        // Retrieve and display history from local storage
+        const history = JSON.parse(localStorage.getItem('history')) || [];
+        const reversedHistory = history.slice().reverse(); // Create a reversed copy of the array
+
+        if (reversedHistory.length > 0) {
+            let historyHtml = '<h2>Activation History</h2><ul>';
+
+            reversedHistory.forEach(entry => {
+                historyHtml += `<li>- ${entry.dateTime}, E-mail server PWD:<br> ${entry.result1} <br> Disable_Enable Automation PWD: ${entry.result2}</li> <br><br>`;
+            });
+
+            historyHtml += '</ul>';
+
+            Swal.fire({
+                title: 'Calculation History',
+                html: historyHtml,
+                icon: 'info'
+            });
+        } else {
+            Swal.fire({
+                title: 'No History',
+                text: 'No calculation history available.',
+                icon: 'info'
+            });
+        }
+    }
+
+    
 
     </script>
 
