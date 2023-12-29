@@ -76,6 +76,10 @@
     <div class="button">
         <div class="button-label">Ussd Mat VIP3<br><small> Pay 5500</small></div>
     </div>
+	
+	<div class="button">
+        <div class="button-label">Ussd AI Face SBMA<br><small> Pay 15000</small></div>
+    </div>
 </div>
 
 
@@ -93,6 +97,7 @@
         <option value="2800">Mat Web</option>
         <option value="3000">Mat V3</option>
         <option value="5500">Mat VIP3</option>
+       <option value="15000">AI Face</option>
     </select>
     <br>
     
@@ -713,7 +718,13 @@ const secondsxy = String(now.getSeconds()).padStart(2, '0');
   } else if (selectedFixedValue === 5500) {
     dayDifference += 180;
     typed = "Mateg  VIP3 "
+  } 
+
+else if (selectedFixedValue === 15000) {
+    dayDifference += 365;
+    typed = "AI Face "
   }
+  
   
   
   Swal.fire({
@@ -817,6 +828,23 @@ helpmessagevip =comment+" Mukiriya dukunda id:"+ABCD+" waguze App Mategeko y'Umu
 helpmessagev3 ="N/A";
 helpmessage ="N/A";
 AutoMessV3 ="N/A";
+              AutoMessVIP ="N/A";
+              AutoMessWeb ="N/A";
+              AutoMess250 ="N/A";
+              AutoMess50 ="N/A"; 
+
+              
+} 
+
+
+       if(fixed===5500) {
+
+          
+helpmessageAI =comment+" Mukiriya dukunda id:"+ABCD+" Wishyuyr SBMA(Students/staff Behavior Monitoring Agent )  shyiram'imibare "+separatedString+ " ukoreshe abonema yawe bikozwe "+formattedDateTimexyz+"  na:"+localStorage.getItem("lastDeviceID");
+helpmessagev3 ="N/A";
+helpmessage ="N/A";
+AutoMessV3 ="N/A";
+helpmessagevip="N/A";
               AutoMessVIP ="N/A";
               AutoMessWeb ="N/A";
               AutoMess250 ="N/A";
@@ -1154,6 +1182,12 @@ XLSX.writeFile(wb, 'USSdexported_data.xlsx'); // Specify the desired filename
                       tilNme="Mategeko   VIP3 5500Frw"
 
                     mess= helpmessagevip;
+                    }
+
+               if (index + 1===9){
+                      tilNme="AI Face SBMA  15000Frw"
+
+                    mess= helpmessageAI;
                     }
                     
                     
